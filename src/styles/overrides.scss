@@ -1,0 +1,10 @@
+$primary: #22B8EB;
+$bg-color: #36373c;
+$white: #fff;
+
+$backgroundColor: $bg-color;
+$mainFont: 'Roboto';
+$headingFont: 'Roboto';
+$linkColor: $primary;
+$linkColorHover: lighten($linkColor, 20%);
+$selectionBackgroundColor: $primary;

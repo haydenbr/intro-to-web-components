@@ -1,0 +1,57 @@
+section {
+	&.intro-slide {
+		.avatar-container {
+			background: white;
+			border-radius: 50%;
+			box-shadow: 2px 2px 10px 0 rgba(0,0,0,0.75);
+			height: 135px;
+			margin-right: 20px;
+			width: 135px;
+
+			.avatar {
+				background-image: url('assets/images/hayden.png');
+				background-repeat: no-repeat;
+				background-position: -25px; 
+				background-size: cover;
+				border-radius: 50%;
+				height: 125px;
+				position: relative;
+				transform: translate3d(-50%, -50%, 0);
+				width: 125px;
+				top: 50%;
+				left: 50%;
+			}
+		}
+
+		.cover {
+			width: 400px;
+			margin-bottom: 75px;
+		}
+
+		.row {
+			display: flex;
+			justify-content: center;
+		}
+
+		.title {
+			font-size: 60px;
+			font-weight: bold;
+			margin-top: 50px;
+		}
+
+		.presenter {
+			display: flex;
+			align-items: center;
+			padding-left: 30px;
+			position: absolute;
+			bottom: -180px;
+			left: -40px;
+		}
+
+		.whale {
+			box-shadow: none;
+			transform: scale(.75);
+			transform-origin: center;
+		}
+	}
+}

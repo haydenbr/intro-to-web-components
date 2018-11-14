@@ -1,0 +1,43 @@
+{
+  "name": "web-components-are-coming",
+  "version": "0.0.0",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "webpack --config ./webpack/webpack.dev.js",
+    "clean": "rimraf dist/*",
+    "serve": "webpack-dev-server --config ./webpack/webpack.dev.js --port 3000 --host 0.0.0.0",
+    "start": "yarn serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/haydenbr/web-components-are-coming"
+  },
+  "author": "haydenbr",
+  "license": "MIT",
+  "devDependencies": {
+    "ajv": "^5.0.0",
+    "autoprefixer": "^7.2.6",
+    "chalk": "^2.3.1",
+    "copy-webpack-plugin": "^4.4.1",
+    "css-loader": "^0.28.9",
+    "extract-loader": "^1.0.2",
+    "file-loader": "^1.1.6",
+    "html-loader": "^0.5.5",
+    "imagemin-webpack-plugin": "2.1.1",
+    "node-sass": "^4.7.2",
+    "pngquant-bin": "3.1.1",
+    "postcss": "^6.0.17",
+    "postcss-loader": "^2.1.0",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^6.0.6",
+    "source-map": "^0.7.0",
+    "uglifyjs-webpack-plugin": "^1.1.8",
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.1",
+    "webpack-merge": "^4.1.1",
+    "write-file-webpack-plugin": "^4.2.0"
+  },
+  "dependencies": {
+    "reveal.js": "3.6.0"
+  }
+}

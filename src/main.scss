@@ -1,0 +1,12 @@
+@import 'node_modules/reveal.js/css/reveal.scss';
+@import 'node_modules/reveal.js/css/theme/template/mixins.scss';
+@import 'node_modules/reveal.js/css/theme/template/settings.scss';
+
+@import './styles/font.scss';
+@import './styles/overrides.scss';
+@import './styles/slides.scss';
+@import './styles/title-page.scss';
+@import './styles/highlight-style.scss';
+@import './styles/kitchen-sink-demo.scss';
+
+@import 'node_modules/reveal.js/css/theme/template/theme.scss';

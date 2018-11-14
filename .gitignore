@@ -1,0 +1,7 @@
+.DS_Store
+.vscode
+node_modules
+outline.md
+dist
+*.log
+foo.md
