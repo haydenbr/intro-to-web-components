@@ -50,7 +50,7 @@ template.innerHTML = `
 </div>
 `;
 
-class CoolTabButton extends HTMLElement {
+class CoolTab extends HTMLElement {
 	constructor() {
 		super();
 
@@ -105,4 +105,4 @@ class CoolTabButton extends HTMLElement {
 	}
 }
 
-window.customElements.define('cool-tab-button', CoolTabButton);
+window.customElements.define('cool-tab', CoolTab);

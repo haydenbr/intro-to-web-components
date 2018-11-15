@@ -10,7 +10,7 @@ const style = `
 	justify-content: center;
 }
 
-::slotted(cool-tab-button) {
+::slotted(cool-tab) {
 	--tab-button-border-radius: var(--border-radius);
 	--tab-button-border-width: var(--border-width);
 	--tab-button-color: var(--color);
@@ -22,7 +22,7 @@ template.innerHTML = `
 <slot></slot>
 `;
 
-class CoolTab extends HTMLElement {
+class CoolTabGroup extends HTMLElement {
 	constructor() {
 		super();
 
@@ -61,7 +61,7 @@ class CoolTab extends HTMLElement {
 	}
 
 	get tabButtons() {
-		return Array.from(this.querySelectorAll('cool-tab-button'));
+		return Array.from(this.querySelectorAll('cool-tab'));
 	}
 
 	dispatchTabChange() {
@@ -73,4 +73,4 @@ class CoolTab extends HTMLElement {
 	}
 }
 
-window.customElements.define('cool-tab', CoolTab);
+window.customElements.define('cool-tab-group', CoolTabGroup);
