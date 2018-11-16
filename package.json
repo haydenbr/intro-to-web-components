@@ -38,6 +38,7 @@
     "write-file-webpack-plugin": "^4.2.0"
   },
   "dependencies": {
+    "lit-html": "^0.13.0",
     "reveal.js": "3.6.0"
   }
 }
