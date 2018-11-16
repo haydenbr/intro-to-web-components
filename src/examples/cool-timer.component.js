@@ -35,6 +35,26 @@ class CoolTimer extends HTMLElement {
 		clearInterval(this._timerInterval);
 	}
 
+	start() {
+		if (this.timerIsRunning) {
+			return;
+		}
+
+		this._timerInterval = setInterval(() => {
+			this.currentTime = this.currentTime + this._millisecondsInterval;
+		}, this._millisecondsInterval);
+	}
+
+	stop() {
+		clearInterval(this._timerInterval);
+		this._timerInterval = undefined;
+		this.render();
+	}
+
+	reset() {
+		this.currentTime = 0;
+	}
+
 	get currentTime() {
 		return this._currentTime;
 	}
@@ -60,24 +80,20 @@ class CoolTimer extends HTMLElement {
 		return !!this._timerInterval;
 	}
 
-	start() {
-		if (this.timerIsRunning) {
-			return;
+	get startButton() {
+		if (!this.timerIsRunning) {
+			return html`<button @click=${() => this.start()}>
+				start
+			</button>`
 		}
-
-		this._timerInterval = setInterval(() => {
-			this.currentTime = this.currentTime + this._millisecondsInterval;
-		}, this._millisecondsInterval);
 	}
 
-	stop() {
-		clearInterval(this._timerInterval);
-		this._timerInterval = undefined;
-		this.render();
-	}
-
-	reset() {
-		this.currentTime = 0;
+	get stopButton() {
+		if (this.timerIsRunning) {
+			return html`<button @click=${() => this.stop()}>
+				stop
+			</button>`
+		}
 	}
 
 	render() {
@@ -86,14 +102,8 @@ class CoolTimer extends HTMLElement {
 
 			<div id="time">${this.formattedTime}</div>
 			<div id="timer-controls">
-				${!this.timerIsRunning ? html`
-					<button @click=${() => this.start()}>
-						start
-					</button>` :
-					html`<button @click=${() => this.stop()}>
-						stop
-					</button>`
-				}
+				${this.startButton}
+				${this.stopButton}
 				<button @click=${() => this.reset()}>
 					reset
 				</button>
