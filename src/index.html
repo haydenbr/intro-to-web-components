@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Web Components are Coming</title>
+    <title>Intro to Web Components</title>
 
     <link rel="stylesheet" href="main.css">
 
@@ -24,7 +24,7 @@
 					data-background-image="./assets/images/dark-bg.png"
         >
           <div class="row">
-            <div class="title">Web Components are Coming</div>
+            <div class="title">Intro to Web Components</div>
 					</div>
 					<div class="row">
 						<img class="cover" src="./assets/images/strong-bad-email.png">
@@ -44,7 +44,7 @@
           class="content-slide"
           data-background-image="./assets/images/dark-bg.png"
         >
-					Slides: <a href="https://github.com/haydenbr/web-components-are-coming">github.com/haydenbr/web-components-are-coming</a>
+					Slides: <a href="https://github.com/haydenbr/intro-to-web-components" target="_blank">github.com/haydenbr/intro-to-web-components</a>
 				</section>
 				
         <section data-background-image="./assets/images/dark-bg.png">
@@ -62,13 +62,6 @@
 					<div class="page-title">Cross-framework compatability</div>
 
 					<img src="./assets/images/cross-framework.png">
-
-					<aside class="notes">
-						<ul>
-							<li>smaller framework dependency</li>
-							<li>ground shifting underneath</li>
-						</ul>
-					</aside>
 				</section>
 
         <section
@@ -78,12 +71,6 @@
 					<div class="page-title">Ship less code</div>
 
 					<img src="./assets/images/ship-less-code.png">
-
-					<aside class="notes">
-						<ul>
-							<li>Dont need to ship a library to transform your custom tags into your app</li>
-						</ul>
-					</aside>
 				</section>
 
         <section
@@ -93,12 +80,6 @@
 					<div class="page-title">Potentially better performance</div>
 
 					<img src="./assets/images/better-performance.png">
-
-					<aside class="notes">
-						<ul>
-								<li>browser can optimize</li>
-						</ul>
-					</aside>
 				</section>
 
         <section
@@ -108,12 +89,6 @@
 					<div class="page-title">More semantic markup</div>
 
 					<img src="./assets/images/div-soup.png">
-
-					<aside class="notes">
-						<ul>
-							<li>markup is not representative of the resulting UI</li>
-						</ul>
-					</aside>
 				</section>
 
         <section
@@ -123,28 +98,6 @@
 					<div class="page-title">Bundle markup, styles, and scripts together</div>
 
 					<img src="./assets/images/jquery-bootstrap.png">
-
-					<aside class="notes">
-						<ul>
-							<li>"bootstrap problem"</li>
-						</ul>
-					</aside>
-				</section>
-
-				<section
-					class="image-slide"
-					data-background-image="./assets/images/dark-bg.png"
-				>
-					<img src="./assets/images/brace-yourselves.png">
-					<aside class="notes">
-						<ul>
-							<li>first web components in 2011</li>
-							<li>MS 1998 proposal</li>
-							<li>shadow DOM existed in native elements (video, input,)</li>
-							<li>custom elements v1 in 2017</li>
-							<li>third-party libraries: ionic</li>
-						</ul>
-					</aside>
 				</section>
 
         <section
@@ -156,12 +109,6 @@
 					<div class="fragment"><a href="https://html.spec.whatwg.org/multipage/custom-elements.html">Custom Elements</a></div>
 					<div class="fragment"><a href="https://dom.spec.whatwg.org/#shadow-trees">Shadow DOM (CSS variables)</a></div>
 					<div class="fragment"><a href="https://html.spec.whatwg.org/multipage/scripting.html#the-template-element">HTML templates</a></div>
-
-					<aside class="notes">
-						<ul>
-							<li>RIP html imports</li>
-						</ul>
-					</aside>
 				</section>
 
         <section data-background-image="./assets/images/dark-bg.png">
@@ -173,25 +120,10 @@
           data-background-image="./assets/images/dark-bg.png"
         >
 					<img src="./assets/images/browser-support.png">
-					
-					<aside class="notes">
-						<ul>
-							<li>Chrome 73</li>
-							<li>customize built in elements (Safari)</li>
-							<li>IE transpile and adapter</li>
-						</ul>
-					</aside>
 				</section>
 
 				<section data-background-image="./assets/images/dark-bg.png">
 					<div class="section-title">Are they production ready?</div>
-					
-					<aside class="notes">
-						<ul>
-							<li>github jquery -> custom elements</li>
-							<li>YouTube</li>
-						</ul>
-					</aside>
 				</section>
 
         <section data-background-image="./assets/images/dark-bg.png">
@@ -207,7 +139,7 @@
 
 					<kitchen-sink id="bob">
 						<small>message in the default slot</small>
-						<small slot="secondary-slot">Chili cheese dogs!</small>
+						<small slot="secondary-slot">Masala cheese fries!</small>
 						<div class="cool" slot="secondary-slot">
 							<!-- <div class="cool"> -->
 								nested content
@@ -257,12 +189,17 @@
 					<div class="row">
 						<img style="width: 125px; margin-right: 20px;" src="./assets/images/vaadin.png"><a href="https://github.com/vaadin" target="_blank">Vaadin</a>
 					</div>
+				</section>
 
-					<aside class="notes">
-						<ul>
-							<li>not Angular</li>
-						</ul>
-					</aside>
+        <section
+          class="image-slide"
+          data-background-image="./assets/images/dark-bg.png"
+        >
+					<div class="page-title">Bundle markup, styles, and scripts together</div>
+
+					<a href="https://twitter.com/polymer/status/1092878236676063233" target="_blank">
+						<img src="./assets/images/polymer-release.png">
+					</a>
 				</section>
 
         <section
@@ -279,15 +216,9 @@
 					<br>
 					<a href="https://github.com/webcomponents/webcomponentsjs" target="_blank">Polyfills</a>
 					<br>
-					<a href="https://github.com/ionic-team/ionic" target="_blank">Ionic Framework</a>
-					<br>
-					<a href="https://medium.com/@oneeezy/frameworks-vs-web-components-9a7bd89da9d4" target="_blank">Blog: Frameworks vs Web Components</a>
-					<br>
 					<a href="https://custom-elements-everywhere.com/" target="_blank">Custom Elements Everywhere</a>
 					<br>
 					<a href="https://githubengineering.com/removing-jquery-from-github-frontend/" target="_blank">GitHub removes jquery</a>
-					<br>
-					<a href="https://www.youtube.com/watch?v=7CUO7PyD5zA">Google I/O Polymer 3.0</a>
 					<br>
 					<a href="https://www.youtube.com/watch?v=2txPYQOWBtg">Original Google I/O 2012 Web Components Talk</a>
 				</section>

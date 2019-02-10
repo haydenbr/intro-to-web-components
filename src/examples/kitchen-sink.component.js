@@ -20,13 +20,14 @@ slot[name="secondary-slot"]::slotted(.cool) {
 	color: #6f7dbc;
 }
 `;
-template.innerHTML = `
+const templateString = `
 <style>${styles}</style>
 <p><span id="name"></span> is cool!!!</p>
 <slot></slot>
 <hr />
 <slot name="secondary-slot"></slot>
 `;
+template.innerHTML = templateString;
 
 // template tag vs innerHTML
 // lifecycle events

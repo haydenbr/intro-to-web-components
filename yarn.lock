@@ -3980,10 +3980,10 @@ lcid@^1.0.0:
   dependencies:
     invert-kv "^1.0.0"
 
-lit-html@^0.13.0:
-  version "0.13.0"
-  resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-0.13.0.tgz#d05e7fe8ade572432120339c451c614669788adf"
-  integrity sha512-p3R2ji/ucNVG5skguy8WufmSYIdMiTTb9ObUVYM2bOuvIXzDnUiePXGwP5BDbKssW1K6fw1Oj/M07FzdPLsTXw==
+lit-html@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-1.0.0.tgz#3dc3781a8ca68a9b5c2ff2a61e263662b9b2267b"
+  integrity sha512-oeWlpLmBW3gFl7979Wol2LKITpmKTUFNn7PnFbh6YNynF61W74l6x5WhwItAwPRSATpexaX1egNnRzlN4GOtfQ==
 
 load-json-file@^1.0.0:
   version "1.1.0"
