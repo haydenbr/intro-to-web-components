@@ -55,17 +55,18 @@ class CoolTabGroup extends HTMLElement {
 			return;
 		}
 
+		let oldValue = this._value;
 		this._value = newValue;
 		this.render();
-		this.dispatchTabChange();
+		this.dispatchTabChange({ oldValue, newValue });
 	}
 
 	get tabButtons() {
 		return Array.from(this.querySelectorAll('cool-tab'));
 	}
 
-	dispatchTabChange() {
-		this.dispatchEvent(new CustomEvent('tabchange', { bubbles: true }));
+	dispatchTabChange(payload) {
+		this.dispatchEvent(new CustomEvent('tabchange', { bubbles: true, detail: payload }));
 	}
 
 	render() {
