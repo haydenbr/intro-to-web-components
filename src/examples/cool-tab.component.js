@@ -9,6 +9,21 @@ const style = `
 	display: block;
 	flex-grow: 1;
 	overflow: none;
+
+	background-color: #fff;
+	color: var(--tab-button-color);
+	cursor: pointer;
+	font-size: 18px;
+	padding: 10px;
+	text-align: center;
+	user-select: none
+	transition: all 200ms ease-in-out;
+}
+
+:host([selected]) {
+	background-color: var(--tab-button-color);
+	color: #fff;
+	transition: all 200ms ease-in-out;
 }
 
 :host(:not(:first-of-type)) {
@@ -24,55 +39,35 @@ const style = `
 	border-top-right-radius: var(--tab-button-border-radius);
 	border-bottom-right-radius: var(--tab-button-border-radius);
 }
-
-#tab-inner {
-	background-color: #fff;
-	color: var(--tab-button-color);
-	cursor: pointer;
-	font-size: 18px;
-	padding: 10px;
-	text-align: center;
-	user-select: none
-	transition: all 200ms ease-in-out;
-}
-
-#tab-inner[selected] {
-	background-color: var(--tab-button-color);
-	color: #fff;
-	transition: all 200ms ease-in-out;
-}
 `;
 
 template.innerHTML = `
 <style>${style}</style>
-<div id="tab-inner">
-	<slot></slot>
-</div>
+<slot></slot>
 `;
 
 class CoolTab extends HTMLElement {
 	constructor() {
 		super();
 
-		this._readonlySelected = false;
-		this._readonlyValue = '';
+		this._selected = false;
+		this._value = '';
 	}
 
 	connectedCallback() {
 		const shadowRoot = this.attachShadow({ mode: 'open' });
 		shadowRoot.appendChild(template.content.cloneNode(true));
 
-		this._readonlyValue = this.getAttribute('value');
-		this.$tabInner = this.shadowRoot.querySelector('#tab-inner');
-		this.clickListener = this.$tabInner.addEventListener('click', () => this.selected = true);
+		this._value = this.getAttribute('value');
+		this.clickListener = this.addEventListener('click', () => this.selected = true);
 	}
 
 	get value() {
-		return this._readonlyValue;
+		return this._value;
 	}
 
 	get selected() {
-		return this._readonlySelected;
+		return this._selected;
 	}
 
 	set selected(selected) {
@@ -80,27 +75,24 @@ class CoolTab extends HTMLElement {
 			return;
 		}
 
-		this._readonlySelected = selected;
+		this._selected = selected;
 		this.render();
 
 		if (this.selected) {
-			this.dispatchTabChange();
+			this.dispatchTabSelect();
 		}
 	}
 
-	dispatchTabChange() {
+	dispatchTabSelect() {
 		this.dispatchEvent(new CustomEvent('tabselect', { bubbles: true }));
 	}
 
 	render() {
-		if (!this.$tabInner) {
-			return;
-		}
-
 		if (this.selected) {
-			this.$tabInner.setAttribute('selected', '');
+			this.setAttribute('selected', '');
+			this.set
 		} else {
-			this.$tabInner.removeAttribute('selected');
+			this.removeAttribute('selected');
 		}
 	}
 }

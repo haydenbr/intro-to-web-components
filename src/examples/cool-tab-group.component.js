@@ -1,19 +1,9 @@
 const template = document.createElement('template');
 const style = `
 :host {
-	--border-radius: 5px;
-	--border-width: 3px;
-	--color: #6f7dbc;
-
 	align-items: center;
 	display: flex;
 	justify-content: center;
-}
-
-::slotted(cool-tab) {
-	--tab-button-border-radius: var(--border-radius);
-	--tab-button-border-width: var(--border-width);
-	--tab-button-color: var(--color);
 }
 `;
 
