@@ -27,7 +27,6 @@ class CoolTimer extends HTMLElement {
 		this._millisecondsInterval = 5;
 
 		this.attachShadow({ mode: 'open' });
-
 		this.render();
 	}
 

@@ -1,6 +1,8 @@
 import './kitchen-sink.component';
-import './cool-tab-group.component';
-import './cool-tab.component';
+import './cool-tab-group.vanilla.component';
+import './cool-tab.vanilla.component';
+import './cool-tab-group.lit-html.component';
+import './cool-tab.lit-html.component';
 import './cool-side-menu.component';
 import './cool-timer.lit-html.component';
 import './cool-timer.vanilla.component';
