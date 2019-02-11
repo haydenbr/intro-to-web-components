@@ -100,4 +100,4 @@ class CoolTimer extends HTMLElement {
 	}
 }
 
-window.customElements.define('cool-timer', CoolTimer);
+// window.customElements.define('cool-timer', CoolTimer);

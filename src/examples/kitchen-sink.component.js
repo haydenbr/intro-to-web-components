@@ -64,9 +64,9 @@ class KitchenSink extends HTMLElement {
 	}
 
 	connectedCallback() {
-		const shadowRoot = this.attachShadow({ mode: 'open' });
-		shadowRoot.appendChild(template.content.cloneNode(true));
-		this._$name = shadowRoot.querySelector('#name');
+		this.attachShadow({ mode: 'open' });
+		this.shadowRoot.appendChild(template.content.cloneNode(true));
+		this._$name = this.shadowRoot.querySelector('#name');
 
 		this.name = this.getAttribute('name') || 'Bob';
 	}
