@@ -5,7 +5,7 @@ const styles = `
 }
 
 p {
-	color: var(--color, '#6f7dbc');
+	color: var(--color, #6f7dbc);
 }
 
 slot::slotted(small) {
@@ -64,9 +64,6 @@ class KitchenSink extends HTMLElement {
 	}
 
 	connectedCallback() {
-		// this.appendChild(template.content.cloneNode(true));
-		// this._$name = this.querySelector('#name');
-
 		const shadowRoot = this.attachShadow({ mode: 'open' });
 		shadowRoot.appendChild(template.content.cloneNode(true));
 		this._$name = shadowRoot.querySelector('#name');
