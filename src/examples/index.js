@@ -7,3 +7,4 @@ import './cool-side-menu.component';
 import './cool-stop-watch.lit-html.component';
 import './cool-stop-watch.lit-element.component.ts';
 import './cool-stop-watch.vanilla.component';
+import './twitter-link.component.ts'
