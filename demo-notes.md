@@ -10,7 +10,7 @@
 	- attributeChangedCallback
 - getters and setters
 - property attribute reflection
-- prperty vs attribute
+- property vs attribute
 - content
 	- innerHTML
 	- template

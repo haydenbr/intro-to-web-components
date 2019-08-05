@@ -14,7 +14,7 @@ const componentStyles = `
 		padding: 5px 10px;
 	}
 
-	#timer-controls {
+	#stop-watch-controls {
 		text-align: center;
 	}
 `;
@@ -23,7 +23,7 @@ const templateString = `
 	<style>${componentStyles}</style>
 
 	<div id="time"></div>
-	<div id="timer-controls">
+	<div id="stop-watch-controls">
 		<button id="start">start</button>
 		<button id="stop">stop</button>
 		<button id="reset">reset</button>
@@ -31,10 +31,10 @@ const templateString = `
 `;
 template.innerHTML = templateString;
 
-class CoolTimer extends HTMLElement {
+class CoolStopWatch extends HTMLElement {
 	connectedCallback() {
 		this._currentTime = 0;
-		this._timerInterval;
+		this._stopWatchInterval;
 		this._millisecondsInterval = 5;
 
 		this.attachShadow({ mode: 'open' });
@@ -44,33 +44,37 @@ class CoolTimer extends HTMLElement {
 		this.$stopButton = this.shadowRoot.querySelector('#stop');
 		this.$resetButton = this.shadowRoot.querySelector('#reset');
 
-		this.$startButton.addEventListener('click', () => this.start());
-		this.$stopButton.addEventListener('click', () => this.stop());
-		this.$resetButton.addEventListener('click', () => this.reset());
+		this.start = this.start.bind(this);
+		this.stop = this.stop.bind(this);
+		this.reset = this.reset.bind(this);
+
+		this.$startButton.addEventListener('click', this.start);
+		this.$stopButton.addEventListener('click', this.stop);
+		this.$resetButton.addEventListener('click', this.reset);
 
 		this.render();
 	}
 
 	disconnectedCallback() {
-		clearInterval(this._timerInterval);
-		this.$startButton.removeEventListener('click');
-		this.$stopButton.removeEventListener('click');
-		this.$resetButton.removeEventListener('click');
+		clearInterval(this._stopWatchInterval);
+		this.$startButton.removeEventListener('click', this.start);
+		this.$stopButton.removeEventListener('click', this.stop);
+		this.$resetButton.removeEventListener('click', this.reset);
 	}
 
 	start() {
-		if (this.isTimerRunning) {
+		if (this.isStopWatchRunning) {
 			return;
 		}
 
-		this._timerInterval = setInterval(() => {
+		this._stopWatchInterval = setInterval(() => {
 			this.currentTime = this.currentTime + this._millisecondsInterval;
 		}, this._millisecondsInterval);
 	}
 
 	stop() {
-		clearInterval(this._timerInterval);
-		this._timerInterval = undefined;
+		clearInterval(this._stopWatchInterval);
+		this._stopWatchInterval = undefined;
 		this.render();
 	}
 
@@ -99,14 +103,14 @@ class CoolTimer extends HTMLElement {
 		return `${minutes}:${seconds}.${milliseconds}`;
 	}
 
-	get isTimerRunning() {
-		return !!this._timerInterval;
+	get isStopWatchRunning() {
+		return !!this._stopWatchInterval;
 	}
 
 	render() {
 		this.$timeDisplay.textContent = this.formattedTime;
 
-		if (this.isTimerRunning) {
+		if (this.isStopWatchRunning) {
 			this.$startButton.style.display = 'none';
 			this.$stopButton.style.display = 'inline';
 		} else {
@@ -116,4 +120,4 @@ class CoolTimer extends HTMLElement {
 	}
 }
 
-window.customElements.define('cool-timer', CoolTimer);
+window.customElements.define('cool-stop-watch', CoolStopWatch);

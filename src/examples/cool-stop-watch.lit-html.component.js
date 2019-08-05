@@ -15,15 +15,15 @@ const componentStyles = `
 		padding: 5px 10px;
 	}
 
-	#timer-controls {
+	#stop-watch-controls {
 		text-align: center;
 	}
 `;
 
-class CoolTimer extends HTMLElement {
+class CoolStopWatch extends HTMLElement {
 	connectedCallback() {
 		this._currentTime = 0;
-		this._timerInterval;
+		this._stopWatchInterval;
 		this._millisecondsInterval = 5;
 
 		this.attachShadow({ mode: 'open' });
@@ -31,22 +31,22 @@ class CoolTimer extends HTMLElement {
 	}
 
 	disconnectedCallback() {
-		clearInterval(this._timerInterval);
+		clearInterval(this._stopWatchInterval);
 	}
 
 	start() {
-		if (this.timerIsRunning) {
+		if (this.stopWatchIsRunning) {
 			return;
 		}
 
-		this._timerInterval = setInterval(() => {
+		this._stopWatchInterval = setInterval(() => {
 			this.currentTime = this.currentTime + this._millisecondsInterval;
 		}, this._millisecondsInterval);
 	}
 
 	stop() {
-		clearInterval(this._timerInterval);
-		this._timerInterval = undefined;
+		clearInterval(this._stopWatchInterval);
+		this._stopWatchInterval = undefined;
 		this.render();
 	}
 
@@ -75,8 +75,8 @@ class CoolTimer extends HTMLElement {
 		return `${minutes}:${seconds}.${milliseconds}`;
 	}
 
-	get timerIsRunning() {
-		return !!this._timerInterval;
+	get stopWatchIsRunning() {
+		return !!this._stopWatchInterval;
 	}
 
 	render() {
@@ -84,12 +84,12 @@ class CoolTimer extends HTMLElement {
 			<style>${componentStyles}</style>
 
 			<div id="time">${this.formattedTime}</div>
-			<div id="timer-controls">
-				${!this.timerIsRunning
+			<div id="stop-watch-controls">
+				${!this.stopWatchIsRunning
 					? html`<button @click=${() => this.start()}>start</button>`
 					: null
 				}
-				${this.timerIsRunning
+				${this.stopWatchIsRunning
 					? html`<button @click=${() => this.stop()}>stop</button>`
 					: null
 				}
@@ -99,4 +99,4 @@ class CoolTimer extends HTMLElement {
 	}
 }
 
-// window.customElements.define('cool-timer', CoolTimer);
+window.customElements.define('cool-stop-watch-lit-html', CoolStopWatch);

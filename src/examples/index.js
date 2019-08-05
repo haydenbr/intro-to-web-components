@@ -4,5 +4,5 @@ import './cool-tab.vanilla.component';
 import './cool-tab-group.lit-html.component';
 import './cool-tab.lit-html.component';
 import './cool-side-menu.component';
-import './cool-timer.lit-html.component';
-import './cool-timer.vanilla.component';
+import './cool-stop-watch.lit-html.component';
+import './cool-stop-watch.vanilla.component';
