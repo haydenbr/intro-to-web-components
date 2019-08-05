@@ -1,8 +1,6 @@
 const path = require('path');
-const webpack = require('webpack');
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const WriteFilePlugin = require('write-file-webpack-plugin');
 
 const config = {
@@ -20,6 +18,11 @@ const config = {
 	},
 	module: {
 		rules: [
+			{
+				test: /\.(ts)$/,
+        use: 'ts-loader',
+				exclude: /node_modules/
+			},
 			{
 				test: /\.(scss)$/,
 				use: [

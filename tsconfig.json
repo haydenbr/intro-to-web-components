@@ -1,16 +1,25 @@
+// {
+//   "compilerOptions": {
+//     "target": "es6",
+// 		"module": "es2015",
+// 		"moduleResolution": "node",
+//     "declaration": false,
+//     "sourceMap": true,
+//     "experimentalDecorators": true,
+//     "outDir": "dist",
+//     "lib": ["es2017", "dom"],
+//     "noImplicitAny": true,
+//     "suppressImplicitAnyIndexErrors": true,
+//     "removeComments": true
+//   },
+//   "exclude": ["node_modules", "dist"]
+// }
 {
   "compilerOptions": {
-    "target": "es6",
-		"module": "es2015",
-		"moduleResolution": "node",
-    "declaration": false,
-    "sourceMap": true,
-    "experimentalDecorators": true,
-    "outDir": "dist",
+    "target": "es2017",
+    "module": "es2015",
+    "moduleResolution": "node",
     "lib": ["es2017", "dom"],
-    "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "removeComments": true
-  },
-  "exclude": ["node_modules", "dist"]
+    "experimentalDecorators": true
+  }
 }
