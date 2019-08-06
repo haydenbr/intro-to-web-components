@@ -1,27 +1,38 @@
-# bob-is-cool
+# kitchen-sink
 
 ## custom elements
 
 - create / define custom element
   - es6 classes
-- lifecycle
-  - connectedCallback
-	- disconnectedCallback
-	- attributeChangedCallback
-- getters and setters
-- property attribute reflection
-- property vs attribute
 - content
 	- innerHTML
 	- template
+- lifecycle
+  - connectedCallback
+	- disconnectedCallback
+	- observedAttributes / attributeChangedCallback
+- getters and setters
+- property-attribute reflection
+- property vs attribute
 
 ## shadow DOM
 
-- demo need: clobber styles
 - attach shadow
+- open vs closed mode
 - encapsulation
 - expose variables
+- variables default value
+- :host selector
+- :host presedence
 - slots
-- :host
-- ::slotted
-- open vs closed mode
+	- default slot
+	- multiple items in slot
+	- light DOM vs shadow DOM
+	- ::slotted selector
+	- ::slotted presedence
+	- ::slotted targeting deep elements
+
+# cool-stop-watch
+
+- event handling
+- change detection

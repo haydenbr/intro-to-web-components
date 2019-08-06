@@ -29,30 +29,12 @@ const templateString = `
 `;
 template.innerHTML = templateString;
 
-// template tag vs innerHTML
-// lifecycle events
-// attribute change
-// attrs vs. props
-// attr reflection?
-// design like native elements
-
-// w/o shadow
-// <slot>
-// :host selector
-// ::slotted selector
-// ::slotted nesting
-// low presedence
-// light DOM vs shadow DOM
-
 class KitchenSink extends HTMLElement {
 	constructor() {
 		super();
 
 		this._$name = undefined;
 		this._name = '';
-
-		this._changeHanlders = {};
-		this._changeHanlders['name'] = (oldValue, newValue) => this.handleNameChange(oldValue, newValue);
 	}
 
 	handleNameChange(oldValue, newValue) {
@@ -64,6 +46,8 @@ class KitchenSink extends HTMLElement {
 	}
 
 	connectedCallback() {
+		// this.appendChild(template.content.cloneNode(true))
+		// this._$name = this.querySelector('#name');
 		this.attachShadow({ mode: 'open' });
 		this.shadowRoot.appendChild(template.content.cloneNode(true));
 		this._$name = this.shadowRoot.querySelector('#name');
@@ -90,14 +74,13 @@ class KitchenSink extends HTMLElement {
 	}
 
 	attributeChangedCallback(attrName, oldValue, newValue) {
-		let handler = this._changeHanlders[attrName];
-
-		if (handler) {
-			handler(oldValue, newValue);
+		if (oldValue !== newValue) {
+			this[attrName] = newValue;
 		}
 	}
 
 	disconnectedCallback() {
+		// or do something useful like clean up event listeners
 		alert(`I'll get you Eh Steve, if it's that last thing I DOOOOOOOOOOO!`);
 	}
 
