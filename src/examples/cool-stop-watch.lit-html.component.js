@@ -26,6 +26,11 @@ class CoolStopWatch extends HTMLElement {
 		this._stopWatchInterval;
 		this._millisecondsInterval = 5;
 
+		let initialTime = Number(this.getAttribute('current-time'));
+		if (initialTime && !isNaN(initialTime)) {
+			this._currentTime = initialTime;
+		}
+
 		this.attachShadow({ mode: 'open' });
 		this.render();
 	}

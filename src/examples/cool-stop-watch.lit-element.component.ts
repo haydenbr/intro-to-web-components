@@ -1,4 +1,4 @@
-import { LitElement, html, customElement, css, property } from 'lit-element';
+import { LitElement, html, customElement, css, property,  } from 'lit-element';
 
 @customElement('cool-stop-watch-lit-element')
 export class CoolStopWatch extends LitElement {
@@ -24,7 +24,7 @@ export class CoolStopWatch extends LitElement {
 		`
 	}
 
-	@property() private currentTime = 0;
+	@property({ type: Number, reflect: false, attribute: 'current-time' }) private currentTime = 0;
 	@property() private stopWatchInterval: any;
 	private millisecondsInterval = 5;
 
