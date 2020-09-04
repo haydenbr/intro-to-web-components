@@ -23,7 +23,7 @@
     "extract-loader": "3.1.0",
     "file-loader": "4.1.0",
     "html-loader": "^0.5.5",
-    "node-sass": "^4.7.2",
+    "node-sass": "^4.13.1",
     "pngquant-bin": "3.1.1",
     "postcss": "^6.0.17",
     "postcss-loader": "3.0.0",
